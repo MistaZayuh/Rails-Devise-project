@@ -1,2 +1,12 @@
-<h1>Assignments#new</h1>
-<p>Find me in app/views/assignments/new.html.erb</p>
+<h1>New Assignment</h1>
+<%= form_with(model: @assignment, local: true) do |f| %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true, placeholder: "Name" %>
+  </div>
+  <div class="field">
+    <%= f.label :grade %>
+    <%= f.number_field :grade, min: 0, max: 100 %>
+  </div>
+  <%= f.submit %>
+<% end %>

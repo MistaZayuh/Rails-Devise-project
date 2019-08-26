@@ -1,2 +1,12 @@
 <%= button_to "Log Out", destroy_user_session_path, method: :delete %>
 <h2>Welcome <%= current_user.first_name %></h2>
+<hr />
+<%= link_to "Add Assignment", new_assignments_path %>
+<h5>Your Assignments</h5>
+<ul>
+  <% @assignments.each do |assignment| %>
+    <li>
+      <%= assignment.name %> - $<%= assignment.grade %>
+    </li>
+  <% end %>
+</ul>
