@@ -7,6 +7,7 @@
   <% @assignments.each do |assignment| %>
     <li>
       <%= link_to assignment.name, assignments_path(assignment) %> - <%= assignment.grade %>%
+      <%#This was originally going to link to the assignment show page, but I was having trouble finding assignment id for some reason%>
     </li>
   <% end %>
 </ul>
